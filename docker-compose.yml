@@ -1,0 +1,10 @@
+version: '2.4'
+services:
+  frontend:
+    build: .
+    image: frontend-sample:${TAG:-latest}
+    ports:
+      - "3000:80"
+    mem_limit: 512m
+    mem_reservation: 256m
+    restart: unless-stopped
